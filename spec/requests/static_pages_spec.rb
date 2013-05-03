@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe "StaticPages" do
   
+  let(:base_title) { "Site Web de Cheval Bienveillant"} 
+ 
   describe "Help page" do
     it "should have the content 'Aide'" do
       visit '/static_pages/help'
@@ -10,7 +12,7 @@ describe "StaticPages" do
     it "should have the right title" do
       visit '/static_pages/help'
       page.should have_selector('title',
-                    :text => "Site Web de Cheval Bienveillant | Aide")
+                    :text => "#{base_title} | Aide")
     end
   end
 
@@ -22,7 +24,7 @@ describe "StaticPages" do
     it "should have the right title" do
       visit '/static_pages/home'
       page.should have_selector('title',
-                    :text => "Site Web de Cheval Bienveillant | Accueil")
+                    :text => "#{base_title} | Accueil")
     end
   end
 
@@ -34,7 +36,7 @@ describe "StaticPages" do
     it "should have the right title" do
       visit '/static_pages/about'
       page.should have_selector('title',
-                    :text => "Site Web de Cheval Bienveillant | A propos")
+                    :text => "#{base_title} | A propos")
     end
   end
 
@@ -46,7 +48,7 @@ describe "StaticPages" do
     it "should have the right title" do
       visit '/static_pages/contact'
       page.should have_selector('title',
-                    :text => "Site Web de Cheval Bienveillant | Contact")
+                    :text => "#{base_title} | Contact")
     end
   end
 
